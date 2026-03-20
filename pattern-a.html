@@ -8,164 +8,176 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
 <script>
 tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Noto Sans JP', 'sans-serif'],
-        serif: ['Noto Serif JP', 'serif'],
-      },
-      colors: {
-        gold: '#d4a853',
-        'gold-light': '#f0d68a',
-      }
-    }
-  }
+  theme: { extend: {
+    fontFamily: { sans: ['Noto Sans JP', 'sans-serif'], serif: ['Noto Serif JP', 'serif'] },
+    colors: { gold: '#b8860b', 'gold-light': '#daa520', 'gold-pale': '#fdf6e3', brand: '#1a1040' }
+  }}
 }
 </script>
 <style>
   html { scroll-behavior: smooth; }
-  body { background: linear-gradient(180deg, #10102a 0%, #1a1040 30%, #1e1545 50%, #10102a 100%); }
-  .hero-bg { background: radial-gradient(ellipse at 50% 20%, rgba(212,168,83,0.12) 0%, transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(139,92,246,0.08) 0%, transparent 50%); }
+  body { background: #fffdf7; color: #1a1a2e; }
+
+  /* Hero gradient - warm cream to soft lavender */
+  .hero-bg {
+    background: linear-gradient(180deg, #fffdf7 0%, #f5f0ff 40%, #ede4ff 60%, #fffdf7 100%);
+    position: relative; overflow: hidden;
+  }
+
+  /* Sparkles adapted for light bg */
   .sparkle-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
-  .sparkle { position: absolute; width: 3px; height: 3px; background: radial-gradient(circle, #f0d68a, transparent); border-radius: 50%; animation: sparkleFloat linear infinite; }
-  @keyframes sparkleFloat { 0% { transform: translateY(100vh) scale(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 0.8; } 100% { transform: translateY(-10vh) scale(1); opacity: 0; } }
-  .gradient-text { background: linear-gradient(135deg, #d4a853, #f0d68a, #d4a853); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .glow { box-shadow: 0 0 40px rgba(212,168,83,0.4), 0 0 80px rgba(212,168,83,0.15); }
-  .glow-soft { box-shadow: 0 0 60px rgba(212,168,83,0.08); }
-  .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.08); }
-  .line-accent { border-left: 3px solid rgba(212,168,83,0.6); }
+  .sparkle { position: absolute; width: 4px; height: 4px; background: radial-gradient(circle, rgba(218,165,32,0.6), transparent); border-radius: 50%; animation: sparkleFloat linear infinite; }
+  @keyframes sparkleFloat { 0% { transform: translateY(100vh) scale(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 0.6; } 100% { transform: translateY(-10vh) scale(1); opacity: 0; } }
+
+  .gradient-text { background: linear-gradient(135deg, #b8860b, #daa520, #b8860b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .glow { box-shadow: 0 8px 32px rgba(184,134,11,0.25), 0 0 60px rgba(184,134,11,0.1); }
+  .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(20px); border: 1px solid rgba(184,134,11,0.1); box-shadow: 0 4px 24px rgba(0,0,0,0.04); }
+  .line-accent { border-left: 3px solid #daa520; }
+  .section-alt { background: linear-gradient(180deg, #f8f4ff 0%, #fffdf7 100%); }
+  .section-warm { background: linear-gradient(180deg, #fffdf7 0%, #fef9ef 50%, #fffdf7 100%); }
+
+  /* Scroll animations */
   .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-scale { opacity: 0; transform: scale(0.92); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
   .reveal-scale.visible { opacity: 1; transform: scale(1); }
   .stagger-1 { transition-delay: 0.1s; } .stagger-2 { transition-delay: 0.2s; } .stagger-3 { transition-delay: 0.3s; } .stagger-4 { transition-delay: 0.4s; } .stagger-5 { transition-delay: 0.5s; }
-  .orb { position: absolute; border-radius: 50%; filter: blur(60px); animation: orbFloat 8s ease-in-out infinite; pointer-events: none; }
-  @keyframes orbFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-30px) scale(1.1); } }
+
+  /* Floating orbs - soft for light bg */
+  .orb { position: absolute; border-radius: 50%; filter: blur(80px); animation: orbFloat 10s ease-in-out infinite; pointer-events: none; }
+  @keyframes orbFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-20px) scale(1.05); } }
+
+  /* Hero entrance */
   .hero-fade { animation: heroIn 1.2s ease-out forwards; opacity: 0; }
   .hero-delay1 { animation-delay: 0.3s; } .hero-delay2 { animation-delay: 0.6s; }
   @keyframes heroIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* Button shimmer */
   .btn-shimmer { position: relative; overflow: hidden; }
-  .btn-shimmer::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%); animation: shimmer 3s infinite; }
+  .btn-shimmer::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.3) 50%, transparent 60%); animation: shimmer 3s infinite; }
   @keyframes shimmer { 0% { transform: translateX(-100%) rotate(45deg); } 100% { transform: translateX(100%) rotate(45deg); } }
+
+  /* Step number */
+  .step-num { width: 48px; height: 48px; background: linear-gradient(135deg, #b8860b, #daa520); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 18px; flex-shrink: 0; box-shadow: 0 4px 16px rgba(184,134,11,0.25); }
 </style>
 <script>
   const params = new URLSearchParams(window.location.search);
   const utm = { source: params.get('utm_source') || 'direct', medium: params.get('utm_medium') || 'none', campaign: params.get('utm_campaign') || 'none', content: params.get('utm_content') || 'pattern-a' };
 </script>
 </head>
-<body class="text-white font-sans relative">
+<body class="font-sans relative">
 <div class="sparkle-container" id="sparkles"></div>
 
 <!-- HERO -->
-<section class="hero-bg min-h-screen flex items-center justify-center px-4 py-16 relative overflow-hidden">
-  <div class="orb w-64 h-64 bg-purple-500/10 top-20 -left-32" style="animation-delay:-2s;"></div>
-  <div class="orb w-48 h-48 bg-gold/10 bottom-20 right-10" style="animation-delay:-5s;"></div>
+<section class="hero-bg min-h-screen flex items-center justify-center px-4 py-20">
+  <div class="orb w-80 h-80 bg-purple-200/40 -top-20 -left-40" style="animation-delay:-2s;"></div>
+  <div class="orb w-60 h-60 bg-amber-200/30 bottom-10 right-0" style="animation-delay:-5s;"></div>
   <div class="max-w-3xl mx-auto text-center relative z-10">
-    <p class="text-gold text-sm tracking-[0.3em] mb-6 uppercase hero-fade" style="opacity:0">Harvard Neuroscience × Luck Design</p>
-    <h1 class="font-serif text-3xl md:text-5xl lg:text-6xl font-black leading-tight mb-8 hero-fade hero-delay1" style="opacity:0">
+    <p class="text-gold text-sm tracking-[0.3em] mb-6 uppercase font-bold hero-fade" style="opacity:0">Harvard Neuroscience × Luck Design</p>
+    <h1 class="font-serif text-3xl md:text-5xl lg:text-6xl font-black leading-tight mb-8 text-brand hero-fade hero-delay1" style="opacity:0">
       なぜ、<span class="gradient-text">真面目な人</span>ほど<br>運が悪くなるのか？
     </h1>
-    <p class="text-gray-300/80 text-base md:text-lg leading-relaxed mb-10 max-w-xl mx-auto hero-fade hero-delay2" style="opacity:0">
+    <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-10 max-w-xl mx-auto hero-fade hero-delay2" style="opacity:0">
       脳が"正解"を探すほど、人生のチャンスは見えなくなる。<br>正解探しをやめた人から、仕事も人間関係も<br>「なぜかうまくいく」が始まる。
     </p>
-    <a href="#register" class="inline-block bg-gold hover:bg-gold-light text-[#10102a] font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 glow hover:scale-105 btn-shimmer hero-fade hero-delay2" style="opacity:0">無料で詳細を受け取る</a>
-    <p class="text-gray-500 text-xs mt-4 hero-fade hero-delay2" style="opacity:0">※メールアドレスのみで登録できます</p>
+    <a href="#register" class="inline-block bg-gold hover:bg-gold-light text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 glow hover:scale-105 btn-shimmer hero-fade hero-delay2" style="opacity:0">無料で詳細を受け取る</a>
+    <p class="text-gray-400 text-xs mt-4 hero-fade hero-delay2" style="opacity:0">※メールアドレスのみで登録できます</p>
   </div>
 </section>
 
 <!-- PROBLEM -->
-<section class="py-24 px-4 relative">
+<section class="py-24 px-4 section-warm relative">
   <div class="max-w-2xl mx-auto relative z-10">
-    <h2 class="font-serif text-2xl md:text-3xl font-bold text-center mb-14 reveal">こんな<span class="text-gold">違和感</span>、ありませんか？</h2>
+    <h2 class="font-serif text-2xl md:text-3xl font-bold text-center mb-14 text-brand reveal">こんな<span class="text-gold">違和感</span>、ありませんか？</h2>
     <div class="space-y-5">
-      <div class="line-accent pl-6 py-3 glass rounded-r-xl reveal stagger-1"><p class="text-gray-200">真面目にやってきたのに、なぜか人生がしっくりこない</p></div>
-      <div class="line-accent pl-6 py-3 glass rounded-r-xl reveal stagger-2"><p class="text-gray-200">「自分じゃなくてもいい仕事」をしている気がする</p></div>
-      <div class="line-accent pl-6 py-3 glass rounded-r-xl reveal stagger-3"><p class="text-gray-200">正解を選んできたはずなのに、充実感がない</p></div>
-      <div class="line-accent pl-6 py-3 glass rounded-r-xl reveal stagger-4"><p class="text-gray-200">あの人ばかり「なぜかうまくいく」のが不思議</p></div>
-      <div class="line-accent pl-6 py-3 glass rounded-r-xl reveal stagger-5"><p class="text-gray-200">自己啓発は試したが、結局何も変わらなかった</p></div>
+      <div class="line-accent pl-6 py-3 glass rounded-r-2xl reveal stagger-1"><p class="text-gray-700">真面目にやってきたのに、なぜか人生がしっくりこない</p></div>
+      <div class="line-accent pl-6 py-3 glass rounded-r-2xl reveal stagger-2"><p class="text-gray-700">「自分じゃなくてもいい仕事」をしている気がする</p></div>
+      <div class="line-accent pl-6 py-3 glass rounded-r-2xl reveal stagger-3"><p class="text-gray-700">正解を選んできたはずなのに、充実感がない</p></div>
+      <div class="line-accent pl-6 py-3 glass rounded-r-2xl reveal stagger-4"><p class="text-gray-700">あの人ばかり「なぜかうまくいく」のが不思議</p></div>
+      <div class="line-accent pl-6 py-3 glass rounded-r-2xl reveal stagger-5"><p class="text-gray-700">自己啓発は試したが、結局何も変わらなかった</p></div>
     </div>
-    <p class="text-center text-gray-400 mt-12 text-sm reveal">これらは全て、脳の<span class="text-gold">"ある回路"</span>が原因です。</p>
+    <p class="text-center text-gray-500 mt-12 text-sm reveal">これらは全て、脳の<span class="text-gold font-bold">"ある回路"</span>が原因です。</p>
   </div>
 </section>
 
 <!-- MECHANISM -->
-<section class="py-24 px-4 relative">
+<section class="py-24 px-4 section-alt relative">
   <div class="max-w-2xl mx-auto relative z-10">
-    <h2 class="font-serif text-2xl md:text-3xl font-bold text-center mb-4 reveal">脳科学が解き明かした<br><span class="text-gold">「運の正体」</span></h2>
-    <p class="text-gray-400 text-center mb-14 text-sm reveal">ハーバード大学 脳神経科学プログラムの知見より</p>
+    <h2 class="font-serif text-2xl md:text-3xl font-bold text-center mb-4 text-brand reveal">脳科学が解き明かした<br><span class="text-gold">「運の正体」</span></h2>
+    <p class="text-gray-500 text-center mb-14 text-sm reveal">ハーバード大学 脳神経科学プログラムの知見より</p>
     <div class="space-y-8">
-      <div class="glass rounded-3xl p-8 md:p-10 glow-soft reveal-scale stagger-1">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gold/20 text-gold font-black text-lg">1</span>
+      <div class="glass rounded-3xl p-8 md:p-10 reveal-scale stagger-1">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="step-num">1</div>
           <p class="text-gold font-bold text-sm tracking-wider">STEP 1</p>
         </div>
-        <h3 class="text-xl font-bold mb-3">「正解探しモード」が視野を狭くする</h3>
-        <p class="text-gray-300/70 text-sm leading-relaxed">真面目な人ほど「正解」を求める。しかし脳が正解を探しているとき、注意のフィルターが極端に狭くなり、目の前のチャンス（兆候）に気づけなくなる。これが「運が悪い」の正体。</p>
+        <h3 class="text-xl font-bold mb-3 text-brand">「正解探しモード」が視野を狭くする</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">真面目な人ほど「正解」を求める。しかし脳が正解を探しているとき、注意のフィルターが極端に狭くなり、目の前のチャンス（兆候）に気づけなくなる。これが「運が悪い」の正体。</p>
       </div>
-      <div class="glass rounded-3xl p-8 md:p-10 glow-soft reveal-scale stagger-2">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gold/20 text-gold font-black text-lg">2</span>
+      <div class="glass rounded-3xl p-8 md:p-10 reveal-scale stagger-2">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="step-num">2</div>
           <p class="text-gold font-bold text-sm tracking-wider">STEP 2</p>
         </div>
-        <h3 class="text-xl font-bold mb-3">「気づきモード」で運が動き出す</h3>
-        <p class="text-gray-300/70 text-sm leading-relaxed">正解を探すのをやめると、脳の注意システムが切り替わる。視野が広がり、日常に散らばる「兆候」をキャッチできるようになる。運が良い人は、この状態が常態化している。</p>
+        <h3 class="text-xl font-bold mb-3 text-brand">「気づきモード」で運が動き出す</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">正解を探すのをやめると、脳の注意システムが切り替わる。視野が広がり、日常に散らばる「兆候」をキャッチできるようになる。運が良い人は、この状態が常態化している。</p>
       </div>
-      <div class="glass rounded-3xl p-8 md:p-10 glow-soft reveal-scale stagger-3">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gold/20 text-gold font-black text-lg">3</span>
+      <div class="glass rounded-3xl p-8 md:p-10 reveal-scale stagger-3">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="step-num">3</div>
           <p class="text-gold font-bold text-sm tracking-wider">STEP 3</p>
         </div>
-        <h3 class="text-xl font-bold mb-3">「なぜかうまくいく」が始まる</h3>
-        <p class="text-gray-300/70 text-sm leading-relaxed">兆候をキャッチし、小さくリソースを投入する。するとフィードバックが返り、次の兆候が見えてくる。この連鎖が「なぜかうまくいく人」の仕組み。偶然ではなく、脳の設計の問題。</p>
+        <h3 class="text-xl font-bold mb-3 text-brand">「なぜかうまくいく」が始まる</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">兆候をキャッチし、小さくリソースを投入する。するとフィードバックが返り、次の兆候が見えてくる。この連鎖が「なぜかうまくいく人」の仕組み。偶然ではなく、脳の設計の問題。</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- WHO -->
-<section class="py-24 px-4 relative">
-  <div class="orb w-56 h-56 bg-purple-500/5 bottom-0 left-10" style="animation-delay:-4s;"></div>
+<section class="py-24 px-4 section-warm relative">
+  <div class="orb w-56 h-56 bg-purple-200/30 bottom-0 left-10" style="animation-delay:-4s;"></div>
   <div class="max-w-2xl mx-auto text-center relative z-10">
-    <h2 class="font-serif text-2xl md:text-3xl font-bold mb-10 reveal">なぜ、<span class="text-gold">僕</span>がこれを語るのか</h2>
-    <div class="glass rounded-3xl p-8 md:p-12 glow-soft reveal-scale">
-      <p class="text-gray-300/80 leading-relaxed text-left max-w-xl mx-auto mb-8">
+    <h2 class="font-serif text-2xl md:text-3xl font-bold mb-10 text-brand reveal">なぜ、<span class="text-gold">僕</span>がこれを語るのか</h2>
+    <div class="glass rounded-3xl p-8 md:p-12 reveal-scale">
+      <p class="text-gray-600 leading-relaxed text-left max-w-xl mx-auto mb-8">
         高卒。正解のレールに乗れなかった人間です。<br><br>
         ニート、バンドマン、うつ。「正解」を持てなかった僕は、代わりに「兆候」に気づく力を磨くしかなかった。<br><br>
         その結果、ハーバード大学で脳神経科学を学び、500名のコミュニティを運営し、商業出版が決まった。<br><br>
         正解を持てなかったから、運が味方した。<br>これは僕だけの話ではなく、脳の仕組みの話です。
       </p>
       <p class="text-gold font-bold text-lg">工藤圭介</p>
-      <p class="text-gray-400 text-sm mt-1">SBC主宰 / ハーバード大学 脳神経科学プログラム修了</p>
+      <p class="text-gray-500 text-sm mt-1">SBC主宰 / ハーバード大学 脳神経科学プログラム修了</p>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section id="register" class="py-24 px-4 relative">
-  <div class="orb w-72 h-72 bg-gold/5 top-0 right-0" style="animation-delay:-1s;"></div>
+<section id="register" class="py-24 px-4 section-alt relative">
+  <div class="orb w-72 h-72 bg-amber-200/20 top-0 right-0" style="animation-delay:-1s;"></div>
   <div class="max-w-lg mx-auto text-center relative z-10 reveal-scale">
-    <h2 class="font-serif text-2xl md:text-3xl font-bold mb-6"><span class="text-gold">無料</span>で詳細をお届けします</h2>
-    <p class="text-gray-300/70 text-sm mb-8">「真面目な人ほど運が悪くなる」の全メカニズムと、<br>運を味方にするための具体的な方法を解説した<br>特別コンテンツをメールでお届けします。</p>
+    <h2 class="font-serif text-2xl md:text-3xl font-bold mb-6 text-brand"><span class="text-gold">無料</span>で詳細をお届けします</h2>
+    <p class="text-gray-500 text-sm mb-8">「真面目な人ほど運が悪くなる」の全メカニズムと、<br>運を味方にするための具体的な方法を解説した<br>特別コンテンツをメールでお届けします。</p>
     <form class="space-y-4" onsubmit="handleSubmit(event)">
-      <input type="email" id="email" placeholder="メールアドレス" required class="w-full py-4 px-6 glass rounded-2xl text-white placeholder-gray-500 focus:outline-none transition border border-white/10 focus:border-gold/50">
-      <button type="submit" class="w-full bg-gold hover:bg-gold-light text-[#10102a] font-bold py-4 rounded-2xl text-lg transition-all duration-300 glow hover:scale-[1.02] btn-shimmer">無料で受け取る</button>
+      <input type="email" id="email" placeholder="メールアドレス" required class="w-full py-4 px-6 bg-white rounded-2xl text-gray-800 placeholder-gray-400 focus:outline-none transition border border-gray-200 focus:border-gold shadow-sm">
+      <button type="submit" class="w-full bg-gold hover:bg-gold-light text-white font-bold py-4 rounded-2xl text-lg transition-all duration-300 glow hover:scale-[1.02] btn-shimmer">無料で受け取る</button>
     </form>
-    <p class="text-gray-500 text-xs mt-4">※いつでも解除できます。スパムは送りません。</p>
+    <p class="text-gray-400 text-xs mt-4">※いつでも解除できます。スパムは送りません。</p>
   </div>
 </section>
 
-<footer class="py-8 px-4 border-t border-white/5">
+<footer class="py-8 px-4 border-t border-gray-100 bg-white">
   <div class="max-w-2xl mx-auto text-center">
-    <p class="text-gray-500 text-xs">&copy; 2026 Keisuke Kudo. All rights reserved.</p>
-    <p class="text-gray-600 text-xs mt-2">特定商取引法に基づく表記 | プライバシーポリシー</p>
+    <p class="text-gray-400 text-xs">&copy; 2026 Keisuke Kudo. All rights reserved.</p>
+    <p class="text-gray-300 text-xs mt-2">特定商取引法に基づく表記 | プライバシーポリシー</p>
   </div>
 </footer>
 
 <script>
-(function(){const c=document.getElementById('sparkles');for(let i=0;i<40;i++){const s=document.createElement('div');s.className='sparkle';s.style.left=Math.random()*100+'%';s.style.animationDuration=(6+Math.random()*8)+'s';s.style.animationDelay=Math.random()*10+'s';s.style.width=s.style.height=(2+Math.random()*3)+'px';c.appendChild(s);}})();
+(function(){const c=document.getElementById('sparkles');for(let i=0;i<30;i++){const s=document.createElement('div');s.className='sparkle';s.style.left=Math.random()*100+'%';s.style.animationDuration=(8+Math.random()*10)+'s';s.style.animationDelay=Math.random()*12+'s';s.style.width=s.style.height=(2+Math.random()*4)+'px';c.appendChild(s);}})();
 const obs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible');});},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal,.reveal-scale').forEach(el=>obs.observe(el));
-window.addEventListener('scroll',()=>{const s=window.pageYOffset;document.querySelectorAll('.orb').forEach((o,i)=>{o.style.transform=`translateY(${s*(0.03+i*0.01)}px)`;});});
+window.addEventListener('scroll',()=>{const s=window.pageYOffset;document.querySelectorAll('.orb').forEach((o,i)=>{o.style.transform=`translateY(${s*(0.02+i*0.008)}px)`;});});
 const FORM_ENDPOINT='PASTE_GAS_DEPLOY_URL_HERE';
 async function handleSubmit(e){e.preventDefault();const b=e.target.querySelector('button');b.disabled=true;b.textContent='送信中...';const email=document.getElementById('email').value;const p={email,utm_source:utm.source,utm_medium:utm.medium,utm_campaign:utm.campaign,utm_content:utm.content,pattern:'a'};try{if(FORM_ENDPOINT!=='PASTE_GAS_DEPLOY_URL_HERE')await fetch(FORM_ENDPOINT,{method:'POST',mode:'no-cors',body:JSON.stringify(p)});document.getElementById('email').value='';b.textContent='登録完了！';setTimeout(()=>{b.textContent='無料で受け取る';b.disabled=false;},3000);}catch(err){b.textContent='無料で受け取る';b.disabled=false;}}
 </script>
