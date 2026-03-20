@@ -59,6 +59,18 @@ tailwind.config = {
 
   /* Step number */
   .step-num { width: 48px; height: 48px; background: linear-gradient(135deg, #b8860b, #daa520); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 18px; flex-shrink: 0; box-shadow: 0 4px 16px rgba(184,134,11,0.25); }
+
+  /* Author image */
+  .author-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid rgba(184,134,11,0.2); box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+  .author-img-lg { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid rgba(184,134,11,0.15); box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+
+  /* Book 3D */
+  .book-3d { perspective: 800px; display: inline-block; }
+  .book-3d img { max-width: 220px; border-radius: 4px; box-shadow: 8px 8px 30px rgba(0,0,0,0.15), 2px 2px 8px rgba(0,0,0,0.1); transform: rotateY(-8deg); transition: transform 0.5s ease; }
+  .book-3d:hover img { transform: rotateY(0deg); }
+
+  /* Credential badge */
+  .credential { display: inline-flex; align-items: center; gap: 8px; background: rgba(184,134,11,0.06); border: 1px solid rgba(184,134,11,0.12); border-radius: 100px; padding: 6px 16px; font-size: 12px; color: #b8860b; font-weight: 600; }
 </style>
 <script>
   const params = new URLSearchParams(window.location.search);
@@ -82,6 +94,14 @@ tailwind.config = {
     </p>
     <a href="#register" class="inline-block bg-gold hover:bg-gold-light text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 glow hover:scale-105 btn-shimmer hero-fade hero-delay2" style="opacity:0">無料で詳細を受け取る</a>
     <p class="text-gray-400 text-xs mt-4 hero-fade hero-delay2" style="opacity:0">※メールアドレスのみで登録できます</p>
+    <div class="mt-10 flex items-center justify-center gap-4 hero-fade hero-delay2" style="opacity:0">
+      <img src="images/author-keisuke.webp" alt="工藤圭介" class="author-img">
+      <div class="text-left">
+        <p class="text-gold font-bold text-base">工藤圭介</p>
+        <p class="text-gray-500 text-xs">ハーバード大学 脳神経科学プログラム修了</p>
+        <p class="text-gray-400 text-xs">2026年6月 扶桑社より商業出版予定</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -140,14 +160,47 @@ tailwind.config = {
   <div class="max-w-2xl mx-auto text-center relative z-10">
     <h2 class="font-serif text-2xl md:text-3xl font-bold mb-10 text-brand reveal">なぜ、<span class="text-gold">僕</span>がこれを語るのか</h2>
     <div class="glass rounded-3xl p-8 md:p-12 reveal-scale">
+      <div class="flex flex-col items-center mb-8">
+        <img src="images/author-keisuke.webp" alt="工藤圭介" class="author-img-lg mb-4">
+        <p class="text-gold font-bold text-xl">工藤圭介</p>
+        <p class="text-gray-500 text-sm mt-1">合同会社スループットワールド代表</p>
+      </div>
       <p class="text-gray-600 leading-relaxed text-left max-w-xl mx-auto mb-8">
         高卒。正解のレールに乗れなかった人間です。<br><br>
         ニート、バンドマン、うつ。「正解」を持てなかった僕は、代わりに「兆候」に気づく力を磨くしかなかった。<br><br>
         その結果、ハーバード大学で脳神経科学を学び、500名のコミュニティを運営し、商業出版が決まった。<br><br>
         正解を持てなかったから、運が味方した。<br>これは僕だけの話ではなく、脳の仕組みの話です。
       </p>
-      <p class="text-gold font-bold text-lg">工藤圭介</p>
-      <p class="text-gray-500 text-sm mt-1">SBC主宰 / ハーバード大学 脳神経科学プログラム修了</p>
+      <div class="flex flex-wrap justify-center gap-3 mb-6">
+        <span class="credential">🎓 ハーバード大学 脳神経科学修了</span>
+        <span class="credential">📘 2026年 扶桑社より商業出版</span>
+        <span class="credential">👥 SBC 500名主宰</span>
+        <span class="credential">🎤 セミナー200回以上</span>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3">
+        <span class="credential">🏢 リクルート出身</span>
+        <span class="credential">🌏 国内外2社法人経営</span>
+        <span class="credential">▶️ YouTube 130万回再生</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="py-24 px-4 section-alt relative">
+  <div class="max-w-2xl mx-auto relative z-10">
+    <h2 class="font-serif text-2xl md:text-3xl font-bold text-center mb-4 text-brand reveal">2026年6月<span class="text-gold">商業出版</span>決定</h2>
+    <p class="text-gray-500 text-center mb-12 text-sm reveal">扶桑社より全国書店にて発売予定</p>
+    <div class="flex flex-col md:flex-row items-center gap-10 reveal-scale">
+      <div class="book-3d flex-shrink-0">
+        <img src="images/book-kawaranai.webp" alt="変わらない勇気">
+      </div>
+      <div class="text-left">
+        <p class="text-gold font-bold text-sm tracking-wider mb-2">最新刊</p>
+        <h3 class="font-serif text-2xl font-bold text-brand mb-4">変わらない勇気<br><span class="text-lg text-gray-600 font-normal">〜勇気の17ワーク〜</span></h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6">ありのままの自分でいながら、自然に見つかる"強みの芽"を活かして小さく事業を作る、1人ビジネス術。変わろうとしても全く変われないあなたへ。</p>
+        <p class="text-gray-400 text-xs">※本LPの内容は書籍の一部を先行公開したものです</p>
+      </div>
     </div>
   </div>
 </section>
