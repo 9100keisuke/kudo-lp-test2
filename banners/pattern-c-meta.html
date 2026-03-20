@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 1200px; height: 628px; overflow: hidden; }
+.banner {
+  width: 1200px; height: 628px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #022c22 50%, #0a0a0a 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #fff;
+}
+.banner::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 40% 50%, rgba(5,150,105,0.1) 0%, transparent 60%);
+}
+.content {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; gap: 50px;
+  padding: 0 80px;
+  width: 100%;
+}
+.left { flex: 1; }
+.tag {
+  display: inline-block;
+  background: rgba(5,150,105,0.15);
+  border: 1px solid rgba(52,211,153,0.3);
+  border-radius: 100px;
+  padding: 6px 18px;
+  font-size: 11px;
+  color: #34d399;
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.accent { color: #34d399; }
+.subtitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #d1d5db;
+  margin-bottom: 16px;
+}
+.sub {
+  font-size: 15px;
+  color: #9ca3af;
+  line-height: 1.7;
+}
+.bold-white { color: #fff; font-weight: 700; }
+.right {
+  flex-shrink: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
+}
+.compare {
+  display: flex; gap: 16px;
+}
+.compare-box {
+  border-radius: 16px;
+  padding: 16px 20px;
+  text-align: center;
+  width: 140px;
+}
+.compare-bad {
+  background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.2);
+}
+.compare-good {
+  background: rgba(5,150,105,0.1);
+  border: 1px solid rgba(52,211,153,0.2);
+}
+.compare-label {
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.compare-bad .compare-label { color: #f87171; }
+.compare-good .compare-label { color: #34d399; }
+.compare-item {
+  font-size: 11px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+.cta-btn {
+  background: #059669;
+  color: #fff;
+  font-weight: 900;
+  font-size: 16px;
+  padding: 16px 40px;
+  border-radius: 100px;
+  box-shadow: 0 0 30px rgba(5,150,105,0.3);
+  white-space: nowrap;
+}
+</style>
+</head>
+<body>
+<div class="banner">
+  <div class="content">
+    <div class="left">
+      <div class="tag">脳神経科学 × 気づきの科学</div>
+      <h1><span class="accent">気づき力</span></h1>
+      <p class="subtitle">チャンスに気づける脳の作り方</p>
+      <p class="sub">運がいい人と悪い人の違いは、たった一つ。<br><span class="bold-white">目の前のチャンスに「気づけるか」どうか。</span></p>
+    </div>
+    <div class="right">
+      <div class="compare">
+        <div class="compare-box compare-bad">
+          <p class="compare-label">正解探しモード</p>
+          <p class="compare-item">視野が狭い</p>
+          <p class="compare-item">チャンスが見えない</p>
+          <p class="compare-item">→ 運が悪い</p>
+        </div>
+        <div class="compare-box compare-good">
+          <p class="compare-label">気づきモード</p>
+          <p class="compare-item">視野が広い</p>
+          <p class="compare-item">兆候をキャッチ</p>
+          <p class="compare-item">→ 運がいい</p>
+        </div>
+      </div>
+      <div class="cta-btn">気づき力を手に入れる</div>
+    </div>
+  </div>
+</div>
+</body></html>

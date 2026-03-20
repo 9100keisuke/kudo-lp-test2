@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>気づき力 — チャンスに気づける脳の作り方</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Noto Sans JP', 'sans-serif'],
+        serif: ['Noto Serif JP', 'serif'],
+      },
+      colors: {
+        dark: '#0a0a0a',
+        emerald: '#059669',
+        'emerald-light': '#34d399',
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  .hero-bg {
+    background: linear-gradient(180deg, #0a0a0a 0%, #022c22 40%, #0a0a0a 100%);
+  }
+  .glow-green { box-shadow: 0 0 30px rgba(5, 150, 105, 0.2); }
+  .fade-in { animation: fadeIn 1s ease-out forwards; opacity: 0; }
+  @keyframes fadeIn { to { opacity: 1; } }
+</style>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const utm = {
+    source: params.get('utm_source') || 'direct',
+    medium: params.get('utm_medium') || 'none',
+    campaign: params.get('utm_campaign') || 'none',
+    content: params.get('utm_content') || 'pattern-c'
+  };
+</script>
+</head>
+<body class="bg-dark text-white font-sans">
+
+<!-- ============ FIRST VIEW ============ -->
+<section class="hero-bg min-h-screen flex items-center justify-center px-4 py-16">
+  <div class="max-w-3xl mx-auto text-center fade-in">
+    <p class="text-emerald-light text-xs tracking-[0.2em] mb-6 font-medium">脳神経科学 × 気づきの科学</p>
+    <h1 class="font-serif text-3xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
+      <span class="text-emerald-light">気づき力</span>
+    </h1>
+    <p class="text-2xl md:text-3xl font-bold text-gray-300 mb-8">
+      チャンスに気づける脳の作り方
+    </p>
+    <div class="max-w-xl mx-auto mb-10">
+      <p class="text-gray-400 text-base leading-relaxed">
+        運がいい人と悪い人の違いは、たった一つ。<br>
+        <span class="text-white font-medium">目の前のチャンスに「気づけるか」どうか。</span><br><br>
+        あなたの周りには、すでにチャンスが溢れている。<br>
+        ただ、脳がそれを見せていないだけ。
+      </p>
+    </div>
+    <a href="#register" class="inline-block bg-emerald hover:bg-emerald-light text-white hover:text-dark font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 glow-green hover:scale-105">
+      気づき力を手に入れる
+    </a>
+    <p class="text-gray-600 text-xs mt-4">※無料コンテンツをメールでお届けします</p>
+  </div>
+</section>
+
+<!-- ============ なぜ気づけないのか ============ -->
+<section class="py-20 px-4 bg-[#0d0d0d]">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="font-serif text-2xl md:text-3xl font-bold text-center mb-6">
+      なぜ、チャンスに<span class="text-emerald-light">気づけない</span>のか？
+    </h2>
+    <p class="text-gray-400 text-center mb-12 text-sm">答えは「脳の注意システム」にある</p>
+
+    <div class="bg-[#111] rounded-3xl p-8 md:p-10 mb-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <p class="text-red-400 font-bold text-sm mb-3">正解探しモード（狭い注意）</p>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li>・「正しい答え」だけを探す</li>
+            <li>・想定外の情報をフィルターする</li>
+            <li>・視野が狭くなる</li>
+            <li>・チャンスが見えない</li>
+            <li>→ <span class="text-red-400">運が悪い人の脳</span></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-emerald-light font-bold text-sm mb-3">気づきモード（広い注意）</p>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li>・違和感を拾う</li>
+            <li>・偶然を「兆候」として読む</li>
+            <li>・視野が広い</li>
+            <li>・チャンスに気づく</li>
+            <li>→ <span class="text-emerald-light">運がいい人の脳</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center text-gray-400 text-sm">
+      真面目な人ほど「正解探しモード」が強固。<br>
+      だから、真面目な人ほど運が悪くなる。<br><br>
+      <span class="text-white font-medium">でも、これは脳の「設定」の問題。書き換えられる。</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ 3つの気づき ============ -->
+<section class="py-20 px-4">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="font-serif text-2xl md:text-3xl font-bold text-center mb-12">
+      <span class="text-emerald-light">気づき力</span>を高める3つの鍵
+    </h2>
+    <div class="space-y-6">
+      <div class="bg-[#111] rounded-2xl p-8 border border-emerald/20">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="text-3xl">🔑</span>
+          <h3 class="text-lg font-bold">自分のストーリーラインを持つ</h3>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          ストーリーがあると、関連する兆候が自動的に見えるようになる。脳のRAS（網様体賦活系）がフィルターを変える。
+        </p>
+      </div>
+      <div class="bg-[#111] rounded-2xl p-8 border border-emerald/20">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="text-3xl">🔑</span>
+          <h3 class="text-lg font-bold">違和感を無視しない</h3>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          「なんか気になる」を流さない。違和感は脳が送る「ここにチャンスがある」というシグナル。真面目な人ほど、効率重視でこれを流してしまう。
+        </p>
+      </div>
+      <div class="bg-[#111] rounded-2xl p-8 border border-emerald/20">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="text-3xl">🔑</span>
+          <h3 class="text-lg font-bold">小さくリソースを投入する</h3>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          兆候に気づいたら、小さくギブする。フィードバックを観察する。この連鎖が雪だるま式に運を育てる。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO ============ -->
+<section class="py-20 px-4 bg-[#0d0d0d]">
+  <div class="max-w-2xl mx-auto text-center">
+    <p class="text-emerald-light text-sm font-bold mb-4">ABOUT</p>
+    <h2 class="font-serif text-2xl font-bold mb-6">工藤圭介</h2>
+    <p class="text-gray-400 leading-relaxed text-sm max-w-xl mx-auto mb-6">
+      高卒 → ニート → うつ → ハーバード大学 脳神経科学プログラム修了。<br>
+      500名のコミュニティ「SBC」を主宰。2026年6月に扶桑社より商業出版。<br><br>
+      「正解」を持てなかった人間が、なぜハーバードにたどり着けたのか。<br>
+      その答えが「気づき力」だった。
+    </p>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section id="register" class="py-20 px-4">
+  <div class="max-w-lg mx-auto text-center">
+    <h2 class="font-serif text-2xl md:text-3xl font-bold mb-4">
+      <span class="text-emerald-light">気づき力</span>を手に入れる
+    </h2>
+    <p class="text-gray-400 text-sm mb-8">
+      チャンスに気づける脳の作り方を<br>
+      無料の特別コンテンツでお届けします。
+    </p>
+    <form class="space-y-4" onsubmit="handleSubmit(event)">
+      <input type="email" id="email" placeholder="メールアドレス" required
+        class="w-full py-4 px-6 bg-[#111] border border-gray-800 rounded-xl text-white placeholder-gray-600 focus:border-emerald focus:outline-none transition">
+      <button type="submit"
+        class="w-full bg-emerald hover:bg-emerald-light text-white hover:text-dark font-bold py-4 rounded-xl text-lg transition-all duration-300 glow-green hover:scale-[1.02]">
+        無料で受け取る
+      </button>
+    </form>
+    <p class="text-gray-600 text-xs mt-4">※いつでも解除できます</p>
+  </div>
+</section>
+
+<footer class="py-8 px-4 border-t border-gray-900">
+  <div class="max-w-2xl mx-auto text-center">
+    <p class="text-gray-600 text-xs">&copy; 2026 Keisuke Kudo. All rights reserved.</p>
+    <p class="text-gray-700 text-xs mt-2">特定商取引法に基づく表記 | プライバシーポリシー</p>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const email = document.getElementById('email').value;
+  console.log('Registration:', { email, ...utm });
+  alert('ご登録ありがとうございます。メールをご確認ください。');
+}
+</script>
+</body>
+</html>

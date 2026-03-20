@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 1200px; height: 628px; overflow: hidden; }
+.banner {
+  width: 1200px; height: 628px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #fff;
+}
+.banner::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);
+}
+.content {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; gap: 60px;
+  padding: 0 80px;
+  width: 100%;
+}
+.left { flex: 1; }
+.tag {
+  display: inline-block;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 100px;
+  padding: 6px 18px;
+  font-size: 11px;
+  color: #c9a84c;
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.35;
+  margin-bottom: 16px;
+}
+.gold {
+  background: linear-gradient(135deg, #c9a84c, #e8d48b, #c9a84c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub {
+  font-size: 16px;
+  color: #9ca3af;
+  line-height: 1.7;
+}
+.right {
+  flex-shrink: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
+}
+.cta-btn {
+  background: #c9a84c;
+  color: #0a0a0a;
+  font-weight: 900;
+  font-size: 16px;
+  padding: 16px 40px;
+  border-radius: 100px;
+  box-shadow: 0 0 30px rgba(201,168,76,0.3);
+  white-space: nowrap;
+}
+.author {
+  text-align: center;
+}
+.author-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: #c9a84c;
+}
+.author-title {
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+.line-accent {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, transparent, #c9a84c, transparent);
+}
+</style>
+</head>
+<body>
+<div class="banner">
+  <div class="line-accent"></div>
+  <div class="content">
+    <div class="left">
+      <div class="tag">Harvard Neuroscience × Luck Design</div>
+      <h1>なぜ、<span class="gold">真面目な人</span>ほど<br>運が悪くなるのか？</h1>
+      <p class="sub">脳が"正解"を探すほど、人生のチャンスは見えなくなる。<br>正解探しをやめた人から、「なぜかうまくいく」が始まる。</p>
+    </div>
+    <div class="right">
+      <div class="cta-btn">無料で詳細を受け取る</div>
+      <div class="author">
+        <p class="author-name">工藤圭介</p>
+        <p class="author-title">ハーバード大学 脳神経科学プログラム修了</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

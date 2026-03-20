@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>なぜ、真面目な人ほど運が悪くなるのか？</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Noto Sans JP', 'sans-serif'],
+        serif: ['Noto Serif JP', 'serif'],
+      },
+      colors: {
+        dark: '#0a0a0a',
+        gold: '#c9a84c',
+        'gold-light': '#e8d48b',
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  .gradient-text {
+    background: linear-gradient(135deg, #c9a84c, #e8d48b, #c9a84c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-bg {
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+  }
+  .glow { box-shadow: 0 0 30px rgba(201, 168, 76, 0.3); }
+  .fade-in { animation: fadeIn 1s ease-out forwards; opacity: 0; }
+  @keyframes fadeIn { to { opacity: 1; } }
+  .line-accent { border-left: 3px solid #c9a84c; }
+</style>
+<!-- UTM tracking -->
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const utm = {
+    source: params.get('utm_source') || 'direct',
+    medium: params.get('utm_medium') || 'none',
+    campaign: params.get('utm_campaign') || 'none',
+    content: params.get('utm_content') || 'pattern-a'
+  };
+</script>
+</head>
+<body class="bg-dark text-white font-sans">
+
+<!-- ============ FIRST VIEW ============ -->
+<section class="hero-bg min-h-screen flex items-center justify-center px-4 py-16">
+  <div class="max-w-3xl mx-auto text-center fade-in">
+    <p class="text-gold text-sm tracking-[0.3em] mb-6 uppercase">Harvard Neuroscience × Luck Design</p>
+    <h1 class="font-serif text-3xl md:text-5xl lg:text-6xl font-black leading-tight mb-8">
+      なぜ、<span class="gradient-text">真面目な人</span>ほど<br>
+      <span class="text-white">運が悪くなるのか？</span>
+    </h1>
+    <p class="text-gray-400 text-base md:text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+      脳が"正解"を探すほど、人生のチャンスは見えなくなる。<br>
+      正解探しをやめた人から、仕事も人間関係も<br>
+      「なぜかうまくいく」が始まる。
+    </p>
+    <a href="#register" class="inline-block bg-gold hover:bg-gold-light text-dark font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 glow hover:scale-105">
+      無料で詳細を受け取る
+    </a>
+    <p class="text-gray-600 text-xs mt-4">※メールアドレスのみで登録できます</p>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="py-20 px-4 bg-[#0d0d0d]">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="font-serif text-2xl md:text-3xl font-bold text-center mb-12">
+      こんな<span class="text-gold">違和感</span>、ありませんか？
+    </h2>
+    <div class="space-y-6">
+      <div class="line-accent pl-6 py-2">
+        <p class="text-gray-300">真面目にやってきたのに、なぜか人生がしっくりこない</p>
+      </div>
+      <div class="line-accent pl-6 py-2">
+        <p class="text-gray-300">「自分じゃなくてもいい仕事」をしている気がする</p>
+      </div>
+      <div class="line-accent pl-6 py-2">
+        <p class="text-gray-300">正解を選んできたはずなのに、充実感がない</p>
+      </div>
+      <div class="line-accent pl-6 py-2">
+        <p class="text-gray-300">あの人ばかり「なぜかうまくいく」のが不思議</p>
+      </div>
+      <div class="line-accent pl-6 py-2">
+        <p class="text-gray-300">自己啓発は試したが、結局何も変わらなかった</p>
+      </div>
+    </div>
+    <p class="text-center text-gray-500 mt-10 text-sm">
+      これらは全て、脳の"ある回路"が原因です。
+    </p>
+  </div>
+</section>
+
+<!-- ============ MECHANISM ============ -->
+<section class="py-20 px-4">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="font-serif text-2xl md:text-3xl font-bold text-center mb-6">
+      脳科学が解き明かした<br><span class="text-gold">「運の正体」</span>
+    </h2>
+    <p class="text-gray-400 text-center mb-12 text-sm">ハーバード大学 脳神経科学プログラムの知見より</p>
+
+    <div class="space-y-10">
+      <div class="bg-[#111] rounded-2xl p-8">
+        <p class="text-gold font-bold text-sm mb-3">STEP 1</p>
+        <h3 class="text-xl font-bold mb-3">「正解探しモード」が視野を狭くする</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          真面目な人ほど「正解」を求める。しかし脳が正解を探しているとき、注意のフィルターが極端に狭くなり、目の前のチャンス（兆候）に気づけなくなる。これが「運が悪い」の正体。
+        </p>
+      </div>
+      <div class="bg-[#111] rounded-2xl p-8">
+        <p class="text-gold font-bold text-sm mb-3">STEP 2</p>
+        <h3 class="text-xl font-bold mb-3">「気づきモード」で運が動き出す</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          正解を探すのをやめると、脳の注意システムが切り替わる。視野が広がり、日常に散らばる「兆候」をキャッチできるようになる。運が良い人は、この状態が常態化している。
+        </p>
+      </div>
+      <div class="bg-[#111] rounded-2xl p-8">
+        <p class="text-gold font-bold text-sm mb-3">STEP 3</p>
+        <h3 class="text-xl font-bold mb-3">「なぜかうまくいく」が始まる</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          兆候をキャッチし、小さくリソースを投入する。するとフィードバックが返り、次の兆候が見えてくる。この連鎖が「なぜかうまくいく人」の仕組み。偶然ではなく、脳の設計の問題。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO ============ -->
+<section class="py-20 px-4 bg-[#0d0d0d]">
+  <div class="max-w-2xl mx-auto text-center">
+    <h2 class="font-serif text-2xl md:text-3xl font-bold mb-8">
+      なぜ、<span class="text-gold">僕</span>がこれを語るのか
+    </h2>
+    <p class="text-gray-400 leading-relaxed mb-8 text-left max-w-xl mx-auto">
+      高卒。正解のレールに乗れなかった人間です。<br><br>
+      ニート、バンドマン、うつ。「正解」を持てなかった僕は、代わりに「兆候」に気づく力を磨くしかなかった。<br><br>
+      その結果、ハーバード大学で脳神経科学を学び、500名のコミュニティを運営し、商業出版が決まった。<br><br>
+      正解を持てなかったから、運が味方した。<br>
+      これは僕だけの話ではなく、脳の仕組みの話です。
+    </p>
+    <p class="text-gold font-bold">工藤圭介</p>
+    <p class="text-gray-500 text-sm">SBC主宰 / ハーバード大学 脳神経科学プログラム修了</p>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section id="register" class="py-20 px-4">
+  <div class="max-w-lg mx-auto text-center">
+    <h2 class="font-serif text-2xl md:text-3xl font-bold mb-6">
+      <span class="text-gold">無料</span>で詳細をお届けします
+    </h2>
+    <p class="text-gray-400 text-sm mb-8">
+      「真面目な人ほど運が悪くなる」の全メカニズムと、<br>
+      運を味方にするための具体的な方法を解説した<br>
+      特別コンテンツをメールでお届けします。
+    </p>
+    <form class="space-y-4" onsubmit="handleSubmit(event)">
+      <input type="email" id="email" placeholder="メールアドレス" required
+        class="w-full py-4 px-6 bg-[#111] border border-gray-800 rounded-xl text-white placeholder-gray-600 focus:border-gold focus:outline-none transition">
+      <button type="submit"
+        class="w-full bg-gold hover:bg-gold-light text-dark font-bold py-4 rounded-xl text-lg transition-all duration-300 glow hover:scale-[1.02]">
+        無料で受け取る
+      </button>
+    </form>
+    <p class="text-gray-600 text-xs mt-4">※いつでも解除できます。スパムは送りません。</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="py-8 px-4 border-t border-gray-900">
+  <div class="max-w-2xl mx-auto text-center">
+    <p class="text-gray-600 text-xs">&copy; 2026 Keisuke Kudo. All rights reserved.</p>
+    <p class="text-gray-700 text-xs mt-2">特定商取引法に基づく表記 | プライバシーポリシー</p>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const email = document.getElementById('email').value;
+  // TODO: LINE or メルマガ登録APIに接続
+  console.log('Registration:', { email, ...utm });
+  alert('ご登録ありがとうございます。メールをご確認ください。');
+}
+</script>
+</body>
+</html>

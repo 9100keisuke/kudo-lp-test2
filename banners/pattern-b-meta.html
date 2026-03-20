@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 1200px; height: 628px; overflow: hidden; }
+.banner {
+  width: 1200px; height: 628px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #0f172a 50%, #0a0a0a 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #fff;
+}
+.banner::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(37,99,235,0.08) 0%, transparent 60%);
+}
+.content {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; gap: 50px;
+  padding: 0 80px;
+  width: 100%;
+}
+.left { flex: 1; }
+.tag {
+  display: inline-block;
+  background: rgba(37,99,235,0.15);
+  border: 1px solid rgba(37,99,235,0.3);
+  border-radius: 100px;
+  padding: 6px 18px;
+  font-size: 11px;
+  color: #60a5fa;
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1.35;
+  margin-bottom: 16px;
+}
+.accent { color: #60a5fa; }
+.sub {
+  font-size: 15px;
+  color: #9ca3af;
+  line-height: 1.7;
+}
+.bold-white { color: #fff; font-weight: 700; }
+.right {
+  flex-shrink: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 20px;
+}
+.stats {
+  display: flex; gap: 20px;
+}
+.stat {
+  background: rgba(37,99,235,0.1);
+  border: 1px solid rgba(37,99,235,0.2);
+  border-radius: 16px;
+  padding: 16px 20px;
+  text-align: center;
+}
+.stat-num {
+  font-size: 28px;
+  font-weight: 900;
+  color: #60a5fa;
+}
+.stat-label {
+  font-size: 10px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+.cta-btn {
+  background: #2563eb;
+  color: #fff;
+  font-weight: 900;
+  font-size: 16px;
+  padding: 16px 40px;
+  border-radius: 100px;
+  box-shadow: 0 0 30px rgba(37,99,235,0.3);
+  white-space: nowrap;
+}
+</style>
+</head>
+<body>
+<div class="banner">
+  <div class="content">
+    <div class="left">
+      <div class="tag">NEUROSCIENCE × LUCK ENGINEERING</div>
+      <h1>真面目な人が<br><span class="accent">運を上げる</span>ための技術</h1>
+      <p class="sub">AI時代、実力では差がつかなくなった。<br>成果を分けるのは<span class="bold-white">「運」</span>。そして運は、脳の使い方で変えられる。</p>
+    </div>
+    <div class="right">
+      <div class="stats">
+        <div class="stat">
+          <p class="stat-num">3x</p>
+          <p class="stat-label">チャンス認知率</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num">28日</p>
+          <p class="stat-label">脳の書き換え</p>
+        </div>
+      </div>
+      <div class="cta-btn">無料で技術を学ぶ</div>
+    </div>
+  </div>
+</div>
+</body></html>
