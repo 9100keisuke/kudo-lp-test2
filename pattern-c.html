@@ -192,11 +192,26 @@ tailwind.config = {
 </footer>
 
 <script>
-function handleSubmit(e) {
+const FORM_ENDPOINT = 'PASTE_GAS_DEPLOY_URL_HERE';
+async function handleSubmit(e) {
   e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.disabled = true; btn.textContent = '送信中...';
   const email = document.getElementById('email').value;
-  console.log('Registration:', { email, ...utm });
-  alert('ご登録ありがとうございます。メールをご確認ください。');
+  const payload = { email, utm_source: utm.source, utm_medium: utm.medium, utm_campaign: utm.campaign, utm_content: utm.content, pattern: 'c' };
+  try {
+    if (FORM_ENDPOINT !== 'PASTE_GAS_DEPLOY_URL_HERE') {
+      await fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: JSON.stringify(payload) });
+    }
+    console.log('Registration:', payload);
+    document.getElementById('email').value = '';
+    btn.textContent = '登録完了！';
+    setTimeout(() => { btn.textContent = '無料で受け取る'; btn.disabled = false; }, 3000);
+  } catch(err) {
+    console.error(err);
+    btn.textContent = '無料で受け取る'; btn.disabled = false;
+    alert('エラーが発生しました。再度お試しください。');
+  }
 }
 </script>
 </body>
