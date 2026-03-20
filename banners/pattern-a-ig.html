@@ -1,101 +1,30 @@
-<!DOCTYPE html>
-<html><head>
-<meta charset="UTF-8">
+<!DOCTYPE html><html><head><meta charset="UTF-8">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { width: 1080px; height: 1080px; overflow: hidden; }
-.banner {
-  width: 1080px; height: 1080px;
-  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-  font-family: 'Noto Sans JP', sans-serif;
-  color: #fff;
-  text-align: center;
-  padding: 80px 60px;
-}
-.banner::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(ellipse at 50% 40%, rgba(201,168,76,0.1) 0%, transparent 60%);
-}
-.content {
-  position: relative; z-index: 1;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  height: 100%;
-  gap: 30px;
-}
-.tag {
-  display: inline-block;
-  background: rgba(201,168,76,0.15);
-  border: 1px solid rgba(201,168,76,0.3);
-  border-radius: 100px;
-  padding: 8px 24px;
-  font-size: 13px;
-  color: #c9a84c;
-  letter-spacing: 0.15em;
-  font-weight: 700;
-}
-h1 {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 52px;
-  font-weight: 900;
-  line-height: 1.4;
-}
-.gold {
-  background: linear-gradient(135deg, #c9a84c, #e8d48b, #c9a84c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.sub {
-  font-size: 18px;
-  color: #9ca3af;
-  line-height: 1.8;
-}
-.divider {
-  width: 60px; height: 2px;
-  background: linear-gradient(90deg, transparent, #c9a84c, transparent);
-}
-.cta-btn {
-  background: #c9a84c;
-  color: #0a0a0a;
-  font-weight: 900;
-  font-size: 18px;
-  padding: 20px 50px;
-  border-radius: 100px;
-  box-shadow: 0 0 30px rgba(201,168,76,0.3);
-}
-.author-name {
-  font-weight: 700;
-  font-size: 15px;
-  color: #c9a84c;
-}
-.author-title {
-  font-size: 12px;
-  color: #6b7280;
-  margin-top: 4px;
-}
-.free-tag {
-  font-size: 12px;
-  color: #6b7280;
-}
-</style>
-</head>
-<body>
+.banner { width: 1080px; height: 1080px; background: linear-gradient(180deg, #10102a 0%, #1a1040 40%, #1e1545 60%, #10102a 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; font-family: 'Noto Sans JP', sans-serif; color: #fff; text-align: center; padding: 80px 60px; }
+.banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 50% 35%, rgba(212,168,83,0.12) 0%, transparent 60%); }
+.orb1 { position: absolute; width: 250px; height: 250px; border-radius: 50%; background: rgba(212,168,83,0.06); filter: blur(50px); top: 80px; right: 50px; }
+.orb2 { position: absolute; width: 180px; height: 180px; border-radius: 50%; background: rgba(139,92,246,0.05); filter: blur(50px); bottom: 100px; left: 30px; }
+.content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; gap: 28px; }
+.tag { display: inline-block; background: rgba(212,168,83,0.12); border: 1px solid rgba(212,168,83,0.25); border-radius: 100px; padding: 8px 24px; font-size: 13px; color: #d4a853; letter-spacing: 0.15em; font-weight: 700; }
+h1 { font-family: 'Noto Serif JP', serif; font-size: 52px; font-weight: 900; line-height: 1.4; }
+.gold { background: linear-gradient(135deg, #d4a853, #f0d68a, #d4a853); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.sub { font-size: 18px; color: rgba(255,255,255,0.6); line-height: 1.8; }
+.divider { width: 60px; height: 2px; background: linear-gradient(90deg, transparent, #d4a853, transparent); }
+.cta-btn { background: #d4a853; color: #10102a; font-weight: 900; font-size: 18px; padding: 20px 50px; border-radius: 100px; box-shadow: 0 0 40px rgba(212,168,83,0.4), 0 0 80px rgba(212,168,83,0.15); }
+.author-name { font-weight: 700; font-size: 15px; color: #d4a853; }
+.author-title { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+</style></head><body>
 <div class="banner">
+  <div class="orb1"></div><div class="orb2"></div>
   <div class="content">
     <div class="tag">Harvard Neuroscience × Luck Design</div>
     <h1>なぜ、<span class="gold">真面目な人</span>ほど<br>運が悪くなるのか？</h1>
     <p class="sub">脳が"正解"を探すほど、<br>人生のチャンスは見えなくなる。</p>
     <div class="divider"></div>
     <div class="cta-btn">無料で詳細を受け取る</div>
-    <p class="free-tag">※無料コンテンツをメールでお届けします</p>
-    <div>
-      <p class="author-name">工藤圭介</p>
-      <p class="author-title">ハーバード大学 脳神経科学プログラム修了</p>
-    </div>
+    <div><p class="author-name">工藤圭介</p><p class="author-title">ハーバード大学 脳神経科学プログラム修了</p></div>
   </div>
-</div>
-</body></html>
+</div></body></html>

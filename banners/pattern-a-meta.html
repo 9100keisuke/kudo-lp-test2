@@ -1,97 +1,31 @@
-<!DOCTYPE html>
-<html><head>
-<meta charset="UTF-8">
+<!DOCTYPE html><html><head><meta charset="UTF-8">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { width: 1200px; height: 628px; overflow: hidden; }
-.banner {
-  width: 1200px; height: 628px;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
-  display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-  font-family: 'Noto Sans JP', sans-serif;
-  color: #fff;
-}
-.banner::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);
-}
-.content {
-  position: relative; z-index: 1;
-  display: flex; align-items: center; gap: 60px;
-  padding: 0 80px;
-  width: 100%;
-}
+.banner { width: 1200px; height: 628px; background: linear-gradient(135deg, #10102a 0%, #1a1040 50%, #1e1545 100%); display: flex; align-items: center; position: relative; overflow: hidden; font-family: 'Noto Sans JP', sans-serif; color: #fff; }
+.banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 40%, rgba(212,168,83,0.15) 0%, transparent 60%); }
+.banner::after { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%); border-radius: 50%; }
+.orb1 { position: absolute; width: 200px; height: 200px; border-radius: 50%; background: rgba(212,168,83,0.06); filter: blur(40px); top: -50px; right: 100px; }
+.orb2 { position: absolute; width: 150px; height: 150px; border-radius: 50%; background: rgba(139,92,246,0.05); filter: blur(40px); bottom: -30px; left: 50px; }
+.content { position: relative; z-index: 1; display: flex; align-items: center; gap: 60px; padding: 0 80px; width: 100%; }
 .left { flex: 1; }
-.tag {
-  display: inline-block;
-  background: rgba(201,168,76,0.15);
-  border: 1px solid rgba(201,168,76,0.3);
-  border-radius: 100px;
-  padding: 6px 18px;
-  font-size: 11px;
-  color: #c9a84c;
-  letter-spacing: 0.15em;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-h1 {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 42px;
-  font-weight: 900;
-  line-height: 1.35;
-  margin-bottom: 16px;
-}
-.gold {
-  background: linear-gradient(135deg, #c9a84c, #e8d48b, #c9a84c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.sub {
-  font-size: 16px;
-  color: #9ca3af;
-  line-height: 1.7;
-}
-.right {
-  flex-shrink: 0;
-  display: flex; flex-direction: column; align-items: center; gap: 16px;
-}
-.cta-btn {
-  background: #c9a84c;
-  color: #0a0a0a;
-  font-weight: 900;
-  font-size: 16px;
-  padding: 16px 40px;
-  border-radius: 100px;
-  box-shadow: 0 0 30px rgba(201,168,76,0.3);
-  white-space: nowrap;
-}
-.author {
-  text-align: center;
-}
-.author-name {
-  font-weight: 700;
-  font-size: 14px;
-  color: #c9a84c;
-}
-.author-title {
-  font-size: 11px;
-  color: #6b7280;
-  margin-top: 2px;
-}
-.line-accent {
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 4px;
-  background: linear-gradient(180deg, transparent, #c9a84c, transparent);
-}
-</style>
-</head>
-<body>
+.tag { display: inline-block; background: rgba(212,168,83,0.12); border: 1px solid rgba(212,168,83,0.25); border-radius: 100px; padding: 6px 18px; font-size: 11px; color: #d4a853; letter-spacing: 0.15em; margin-bottom: 20px; font-weight: 700; backdrop-filter: blur(10px); }
+h1 { font-family: 'Noto Serif JP', serif; font-size: 42px; font-weight: 900; line-height: 1.35; margin-bottom: 16px; }
+.gold { background: linear-gradient(135deg, #d4a853, #f0d68a, #d4a853); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.sub { font-size: 16px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+.right { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.cta-btn { background: #d4a853; color: #10102a; font-weight: 900; font-size: 16px; padding: 16px 40px; border-radius: 100px; box-shadow: 0 0 40px rgba(212,168,83,0.4), 0 0 80px rgba(212,168,83,0.15); }
+.author-name { font-weight: 700; font-size: 14px; color: #d4a853; }
+.author-title { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+.line-accent { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, transparent, #d4a853, transparent); }
+.dots { position: absolute; right: 40px; top: 40px; display: flex; gap: 6px; }
+.dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(212,168,83,0.3); }
+</style></head><body>
 <div class="banner">
   <div class="line-accent"></div>
+  <div class="orb1"></div><div class="orb2"></div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
   <div class="content">
     <div class="left">
       <div class="tag">Harvard Neuroscience × Luck Design</div>
@@ -100,11 +34,10 @@ h1 {
     </div>
     <div class="right">
       <div class="cta-btn">無料で詳細を受け取る</div>
-      <div class="author">
+      <div style="text-align:center">
         <p class="author-name">工藤圭介</p>
         <p class="author-title">ハーバード大学 脳神経科学プログラム修了</p>
       </div>
     </div>
   </div>
-</div>
-</body></html>
+</div></body></html>
