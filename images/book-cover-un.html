@@ -1,80 +1,210 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { width: 600px; height: 850px; overflow: hidden; }
+
 .cover {
   width: 600px; height: 850px;
-  background: linear-gradient(160deg, #fffdf7 0%, #fef9ef 30%, #f5f0ff 70%, #ede4ff 100%);
   position: relative; overflow: hidden;
-  font-family: 'Noto Sans JP', sans-serif; color: #1a1a2e;
-  display: flex; flex-direction: column; justify-content: center; align-items: center;
-  padding: 50px 45px;
+  background: #fff;
 }
-/* Decorative elements */
-.cover::before {
-  content: ''; position: absolute; top: -80px; right: -80px;
-  width: 300px; height: 300px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(184,134,11,0.08) 0%, transparent 70%);
+
+/* ===== 右側：巨大縦書きタイトル ===== */
+.big-title {
+  position: absolute;
+  top: 32px; right: 20px;
+  bottom: 170px;
+  writing-mode: vertical-rl;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 86px;
+  font-weight: 900;
+  color: #1a1a1a;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  z-index: 1;
 }
-.cover::after {
-  content: ''; position: absolute; bottom: -60px; left: -60px;
-  width: 250px; height: 250px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(180,130,200,0.06) 0%, transparent 70%);
+.big-title .accent { color: #c4960a; }
+
+/* ===== 著者名 ===== */
+.author-area {
+  position: absolute;
+  top: 38px; right: 216px;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
 }
-.line-top { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #b8860b, #daa520, #b8860b); }
-.tag {
-  background: rgba(184,134,11,0.08); border: 1px solid rgba(184,134,11,0.15);
-  border-radius: 100px; padding: 6px 20px; font-size: 11px; color: #b8860b;
-  letter-spacing: 0.2em; font-weight: 700; margin-bottom: 30px; z-index: 1;
+
+.name-en {
+  writing-mode: vertical-rl;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 8px; font-weight: 400;
+  color: #bbb;
+  letter-spacing: 0.1em;
 }
-.subtitle {
-  font-family: 'Noto Sans JP', sans-serif; font-size: 15px; color: rgba(26,26,46,0.55);
-  letter-spacing: 0.15em; margin-bottom: 16px; z-index: 1; text-align: center;
+
+.name-ja {
+  writing-mode: vertical-rl;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 20px; font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.3em;
 }
-.main-title {
-  font-family: 'Noto Serif JP', serif; font-size: 56px; font-weight: 900;
-  line-height: 1.3; text-align: center; z-index: 1; margin-bottom: 8px;
+
+/* ===== 左上：メインコピー ===== */
+.left-copy {
+  position: absolute;
+  top: 50px; left: 36px;
+  width: 240px;
+  z-index: 1;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px; font-weight: 500;
+  color: #444;
+  line-height: 2.1;
+  letter-spacing: 0.02em;
+  border-left: 3px solid #c4960a;
+  padding-left: 16px;
 }
-.main-title .gold { color: #b8860b; }
-.question-mark {
-  font-family: 'Noto Serif JP', serif; font-size: 80px; font-weight: 900;
-  color: rgba(184,134,11,0.12); position: absolute; top: 60px; right: 40px; z-index: 0;
+
+/* ===== 左中：ハーバード ===== */
+.left-harvard {
+  position: absolute;
+  top: 260px; left: 36px;
+  width: 250px;
+  z-index: 1;
 }
-.desc {
-  font-size: 14px; color: rgba(26,26,46,0.5); line-height: 1.9; text-align: center;
-  z-index: 1; margin-top: 20px; max-width: 420px;
+
+.left-harvard .label {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 10px; font-weight: 400;
+  color: #b0a080;
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
 }
-.divider {
-  width: 60px; height: 2px; background: linear-gradient(90deg, transparent, #b8860b, transparent);
-  margin: 28px 0; z-index: 1;
+
+.left-harvard .text {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 15px; font-weight: 500;
+  color: #333;
+  line-height: 2;
+  letter-spacing: 0.02em;
 }
-.author { z-index: 1; text-align: center; }
-.author-name { font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 700; color: #b8860b; }
-.author-title { font-size: 11px; color: rgba(26,26,46,0.4); margin-top: 4px; letter-spacing: 0.05em; }
-.publisher {
-  position: absolute; bottom: 30px; z-index: 1;
-  font-size: 12px; color: rgba(26,26,46,0.3); letter-spacing: 0.1em;
+
+/* ===== 左下：問いかけ ===== */
+.left-catch {
+  position: absolute;
+  bottom: 195px; left: 36px;
+  width: 260px;
+  z-index: 1;
 }
-/* Sparkle dots */
-.dot { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: rgba(184,134,11,0.15); }
-.d1 { top: 120px; left: 50px; } .d2 { top: 200px; right: 70px; width: 3px; height: 3px; }
-.d3 { bottom: 150px; left: 80px; width: 5px; height: 5px; } .d4 { top: 350px; left: 40px; width: 3px; height: 3px; }
-.d5 { bottom: 200px; right: 50px; } .d6 { top: 80px; left: 200px; width: 3px; height: 3px; }
+
+.left-catch p {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 15px; font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.9;
+}
+.left-catch .gold { color: #c4960a; }
+
+/* ===== 帯（おび） ===== */
+.obi {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 158px;
+  background: #1a1a1a;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  padding: 0 40px;
+}
+
+.obi::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 5%, #c4960a 35%, #dfc06a 50%, #c4960a 65%, transparent 95%);
+}
+
+.obi-top {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 10px; font-weight: 500;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.35em;
+  margin-bottom: 10px;
+}
+
+.obi-main {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 19px; font-weight: 700;
+  color: #fff;
+  text-align: center;
+  line-height: 1.8;
+}
+.obi-main .gold { color: #dfc06a; }
+
+.obi-number {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 9.5px; font-weight: 400;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.2em;
+  margin-top: 12px;
+}
+
+.obi-publisher {
+  position: absolute;
+  bottom: 10px; right: 16px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 9px; color: rgba(255,255,255,0.18);
+  letter-spacing: 0.12em;
+}
 </style></head><body>
 <div class="cover">
-  <div class="line-top"></div>
-  <div class="question-mark">？</div>
-  <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div>
-  <div class="dot d4"></div><div class="dot d5"></div><div class="dot d6"></div>
-  <div class="tag">NEUROSCIENCE × LUCK</div>
-  <p class="subtitle">脳科学が解き明かした「運の正体」</p>
-  <h1 class="main-title">なぜ、<br><span class="gold">真面目な人</span>ほど<br>運が悪くなるのか？</h1>
-  <p class="desc">脳が"正解"を探すほど、<br>人生のチャンスは見えなくなる。</p>
-  <div class="divider"></div>
-  <div class="author">
-    <p class="author-name">工藤 圭介</p>
-    <p class="author-title">ハーバード大学 脳神経科学プログラム修了</p>
+
+  <!-- 右：巨大縦書き -->
+  <div class="big-title">
+    真面目な人ほど<br><span class="accent">運</span>が悪くなる
   </div>
-  <p class="publisher">扶桑社</p>
+
+  <!-- 著者名 -->
+  <div class="author-area">
+    <span class="name-en">Kudo Keisuke</span>
+    <span class="name-ja">工藤圭介</span>
+  </div>
+
+  <!-- 左上：コピー -->
+  <div class="left-copy">
+    脳が"正解"を探すほど、<br>
+    人生のチャンスは<br>
+    見えなくなる。
+  </div>
+
+  <!-- 左中：ハーバード -->
+  <div class="left-harvard">
+    <p class="label">Harvard Neuroscience</p>
+    <p class="text">
+      ハーバード脳神経科学が<br>
+      解き明かした<br>
+      「運がいい人」の脳の使い方
+    </p>
+  </div>
+
+  <!-- 左下：問いかけ -->
+  <div class="left-catch">
+    <p>
+      なぜ、<span class="gold">正解探し</span>を<br>
+      やめた人から<br>
+      「うまくいく」が始まるのか？
+    </p>
+  </div>
+
+  <!-- 帯 -->
+  <div class="obi">
+    <p class="obi-top">「変わらない勇気」著者 最新刊</p>
+    <p class="obi-main">
+      あなたの<span class="gold">「運の悪さ」</span>は、<br>
+      脳のクセが作っていた。
+    </p>
+    <p class="obi-number">脳科学 × 行動経済学 × 東洋哲学</p>
+    <p class="obi-publisher">扶桑社</p>
+  </div>
+
 </div></body></html>
