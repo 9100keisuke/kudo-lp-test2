@@ -1,0 +1,80 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 600px; height: 850px; overflow: hidden; }
+.cover {
+  width: 600px; height: 850px;
+  background: linear-gradient(160deg, #fffdf7 0%, #fef9ef 30%, #f5f0ff 70%, #ede4ff 100%);
+  position: relative; overflow: hidden;
+  font-family: 'Noto Sans JP', sans-serif; color: #1a1a2e;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  padding: 50px 45px;
+}
+/* Decorative elements */
+.cover::before {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,134,11,0.08) 0%, transparent 70%);
+}
+.cover::after {
+  content: ''; position: absolute; bottom: -60px; left: -60px;
+  width: 250px; height: 250px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(180,130,200,0.06) 0%, transparent 70%);
+}
+.line-top { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #b8860b, #daa520, #b8860b); }
+.tag {
+  background: rgba(184,134,11,0.08); border: 1px solid rgba(184,134,11,0.15);
+  border-radius: 100px; padding: 6px 20px; font-size: 11px; color: #b8860b;
+  letter-spacing: 0.2em; font-weight: 700; margin-bottom: 30px; z-index: 1;
+}
+.subtitle {
+  font-family: 'Noto Sans JP', sans-serif; font-size: 15px; color: rgba(26,26,46,0.55);
+  letter-spacing: 0.15em; margin-bottom: 16px; z-index: 1; text-align: center;
+}
+.main-title {
+  font-family: 'Noto Serif JP', serif; font-size: 56px; font-weight: 900;
+  line-height: 1.3; text-align: center; z-index: 1; margin-bottom: 8px;
+}
+.main-title .gold { color: #b8860b; }
+.question-mark {
+  font-family: 'Noto Serif JP', serif; font-size: 80px; font-weight: 900;
+  color: rgba(184,134,11,0.12); position: absolute; top: 60px; right: 40px; z-index: 0;
+}
+.desc {
+  font-size: 14px; color: rgba(26,26,46,0.5); line-height: 1.9; text-align: center;
+  z-index: 1; margin-top: 20px; max-width: 420px;
+}
+.divider {
+  width: 60px; height: 2px; background: linear-gradient(90deg, transparent, #b8860b, transparent);
+  margin: 28px 0; z-index: 1;
+}
+.author { z-index: 1; text-align: center; }
+.author-name { font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 700; color: #b8860b; }
+.author-title { font-size: 11px; color: rgba(26,26,46,0.4); margin-top: 4px; letter-spacing: 0.05em; }
+.publisher {
+  position: absolute; bottom: 30px; z-index: 1;
+  font-size: 12px; color: rgba(26,26,46,0.3); letter-spacing: 0.1em;
+}
+/* Sparkle dots */
+.dot { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: rgba(184,134,11,0.15); }
+.d1 { top: 120px; left: 50px; } .d2 { top: 200px; right: 70px; width: 3px; height: 3px; }
+.d3 { bottom: 150px; left: 80px; width: 5px; height: 5px; } .d4 { top: 350px; left: 40px; width: 3px; height: 3px; }
+.d5 { bottom: 200px; right: 50px; } .d6 { top: 80px; left: 200px; width: 3px; height: 3px; }
+</style></head><body>
+<div class="cover">
+  <div class="line-top"></div>
+  <div class="question-mark">？</div>
+  <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div>
+  <div class="dot d4"></div><div class="dot d5"></div><div class="dot d6"></div>
+  <div class="tag">NEUROSCIENCE × LUCK</div>
+  <p class="subtitle">脳科学が解き明かした「運の正体」</p>
+  <h1 class="main-title">なぜ、<br><span class="gold">真面目な人</span>ほど<br>運が悪くなるのか？</h1>
+  <p class="desc">脳が"正解"を探すほど、<br>人生のチャンスは見えなくなる。</p>
+  <div class="divider"></div>
+  <div class="author">
+    <p class="author-name">工藤 圭介</p>
+    <p class="author-title">ハーバード大学 脳神経科学プログラム修了</p>
+  </div>
+  <p class="publisher">扶桑社</p>
+</div></body></html>

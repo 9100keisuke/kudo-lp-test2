@@ -43,9 +43,9 @@ tailwind.config = {
   .key-num { width: 48px; height: 48px; background: linear-gradient(135deg, #059669, #34d399); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 18px; flex-shrink: 0; box-shadow: 0 4px 16px rgba(5,150,105,0.2); }
   .author-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid rgba(5,150,105,0.15); box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
   .author-img-lg { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid rgba(5,150,105,0.12); box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
-  .book-3d { perspective: 800px; display: inline-block; }
-  .book-3d img { max-width: 220px; border-radius: 4px; box-shadow: 8px 8px 30px rgba(0,0,0,0.15), 2px 2px 8px rgba(0,0,0,0.1); transform: rotateY(-8deg); transition: transform 0.5s ease; }
-  .book-3d:hover img { transform: rotateY(0deg); }
+  .book-3d { display: inline-block; }
+  .book-3d img { max-width: 300px; border-radius: 4px; filter: drop-shadow(12px 12px 30px rgba(0,0,0,0.12)); transition: transform 0.5s ease; }
+  .book-3d:hover img { transform: scale(1.03); }
   .credential { display: inline-flex; align-items: center; gap: 8px; background: rgba(5,150,105,0.05); border: 1px solid rgba(5,150,105,0.1); border-radius: 100px; padding: 6px 16px; font-size: 12px; color: #059669; font-weight: 600; }
 </style>
 <script>
@@ -75,13 +75,11 @@ tailwind.config = {
     </div>
     <a href="#register" class="inline-block bg-emerald hover:bg-emerald-light text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 glow-green hover:scale-105 btn-shimmer hero-fade hero-delay2" style="opacity:0">気づき力を手に入れる</a>
     <p class="text-gray-400 text-xs mt-4 hero-fade hero-delay2" style="opacity:0">※無料コンテンツをメールでお届けします</p>
-    <div class="mt-10 flex items-center justify-center gap-4 hero-fade hero-delay2" style="opacity:0">
-      <img src="images/author-keisuke.webp" alt="工藤圭介" class="author-img">
-      <div class="text-left">
-        <p class="text-emerald font-bold text-base">工藤圭介</p>
-        <p class="text-gray-500 text-xs">ハーバード大学 脳神経科学プログラム修了</p>
-        <p class="text-gray-400 text-xs">2026年6月 扶桑社より商業出版予定</p>
-      </div>
+    <div class="mt-10 flex flex-col items-center hero-fade hero-delay2" style="opacity:0">
+      <img src="images/author-keisuke.webp" alt="工藤圭介" class="author-img mb-3">
+      <p class="text-emerald font-bold text-base">工藤圭介</p>
+      <p class="text-gray-500 text-xs">ハーバード大学 脳神経科学プログラム修了</p>
+      <p class="text-gray-400 text-xs">2026年6月 扶桑社より商業出版予定</p>
     </div>
   </div>
 </section>
@@ -182,17 +180,24 @@ tailwind.config = {
 
 <!-- BOOK -->
 <section class="py-24 px-4 section-alt relative">
-  <div class="max-w-2xl mx-auto relative z-10">
+  <div class="max-w-3xl mx-auto relative z-10">
     <h2 class="font-serif text-2xl md:text-3xl font-bold text-center mb-4 text-brand reveal">2026年6月<span class="text-emerald">商業出版</span>決定</h2>
     <p class="text-gray-500 text-center mb-12 text-sm reveal">扶桑社より全国書店にて発売予定</p>
     <div class="flex flex-col md:flex-row items-center gap-10 reveal-scale">
       <div class="book-3d flex-shrink-0">
-        <img src="images/book-photo.webp" alt="変わらない勇気">
+        <img src="images/book-mockup-3d.webp" alt="なぜ、真面目な人ほど運が悪くなるのか？">
       </div>
-      <div class="text-left">
-        <p class="text-emerald font-bold text-sm tracking-wider mb-2">最新刊</p>
-        <h3 class="font-serif text-2xl font-bold text-brand mb-4">変わらない勇気<br><span class="text-lg text-gray-600 font-normal">〜勇気の17ワーク〜</span></h3>
-        <p class="text-gray-600 text-sm leading-relaxed mb-6">ありのままの自分でいながら、自然に見つかる"強みの芽"を活かして小さく事業を作る、1人ビジネス術。変わろうとしても全く変われないあなたへ。</p>
+      <div class="text-left flex-1">
+        <p class="text-emerald font-bold text-sm tracking-wider mb-2">NEW BOOK</p>
+        <h3 class="font-serif text-2xl font-bold text-brand mb-4">なぜ、真面目な人ほど<br>運が悪くなるのか？</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6">脳科学が解き明かした「運の正体」。<br>正解を探すほどチャンスが見えなくなる仕組みと、<br>運を味方にする脳の使い方を体系化した一冊。</p>
+        <div class="flex gap-4 mb-4">
+          <img src="images/book-photo.webp" alt="変わらない勇気（実物）" class="w-20 h-20 object-cover rounded-lg shadow-md">
+          <div>
+            <p class="text-gray-500 text-xs font-bold">前著「変わらない勇気」</p>
+            <p class="text-gray-400 text-xs mt-1">変わることよりも強みが活かされる働き方を<br>してみませんか？</p>
+          </div>
+        </div>
         <p class="text-gray-400 text-xs">※本LPの内容は書籍の一部を先行公開したものです</p>
       </div>
     </div>
